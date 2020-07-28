@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        button:focus{outline: none;}
+        button{
+            background-color: #6a1db3;
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            width: 10em;
+            height: 4em;
+            cursor: pointer;
+            text-align: center;
+            color: rgba(35, 36, 35, 0.5);
+            border-color: none;
+            border: 0;
+            border-radius: 3.5em;
+            font-size: 20px;
+            
+        }
+        button:hover{
+            font-size: 25px;
+        }
+        h1{
+            position: absolute;
+            text-align: center;
+            left: 40%;
+            top: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <button class="button1">
+        CHANGE 😎
+    </button>
+    <script>
+            const btn = document.querySelector('button');
+            function random(number) {
+            return Math.floor(Math.random() * (number+1));
+            }
+            const h = document.querySelector('h1');
+
+
+            btn.onclick = function() {
+            const bgColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            document.body.style.backgroundColor = bgColor;
+            h.innerText = bgColor;
+            }
+    </script>
+</body>
+</html>
